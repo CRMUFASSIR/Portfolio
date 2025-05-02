@@ -27,18 +27,18 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: MyResume
-  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Dark Mode CSS -->
+  <link href="assets/css/dark-mode.css" rel="stylesheet">
+
 </head>
 
-<body class="index-page">
+<body class="index-page" data-theme="light">
 
   <header id="header" class="header d-flex flex-column justify-content-center">
+    <!-- Dark Mode Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <i class="bi bi-moon-fill"></i>
+    </button>
 
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
@@ -65,7 +65,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-9">
             <h2>Mohammed Mufassir</h2>
-            <p>I'm <span class="typed" data-typed-items="Jr.Web Application Developer, Jr.Software Developer"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            <p>I'm <span class="typed" data-typed-items="Jr.Software Developer , Web Designer"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
             <div class="social-links">
               <a href="#"><i class="bi bi-twitter-x"></i></a>
               <a href="#"><i class="bi bi-facebook"></i></a>
@@ -94,10 +94,9 @@
             <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 content">
-            <h2>Jr.Developer</h2>
+            <h2>Jr.Software Developer</h2>
             <p class="fst-italic py-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              I’m Mohammed Mufassir, a Jr. Software Developer skilled in Java, Spring Boot, and modern web technologies. I build clean, responsive applications with a focus on performance and user experience. I’m driven by continuous learning and delivering scalable solutions.
             </p>
             <div class="row">
               <div class="col-lg-6">
@@ -124,10 +123,6 @@
       </div>
 
     </section><!-- /About Section -->
-
-  
-
-    </section><!-- /Stats Section -->
 
     <!-- Skills Section -->
     <section id="skills" class="skills section">
@@ -286,11 +281,6 @@
       </div>
 
     </section><!-- /Resume Section -->
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
 
     <!-- Services Section -->
     <section id="services" class="services section">
@@ -356,15 +346,6 @@
       </div>
 
     </section><!-- /Services Section -->
-
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section><!-- /Testimonials Section -->
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
@@ -482,6 +463,9 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Dark Mode JS -->
+  <script src="assets/js/dark-mode.js"></script>
 
 </body>
 

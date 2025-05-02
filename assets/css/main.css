@@ -1451,9 +1451,93 @@ section,
   color: var(--accent-color);
 }
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  --background-color: #121212;
+  --default-color: #e0e0e0;
+  --heading-color: #ffffff;
+  --surface-color: #1e1e1e;
+  --contrast-color: #ffffff;
+  --nav-color: #e0e0e0;
+  --nav-hover-color: #4a9cff;
+  --nav-mobile-background-color: #1e1e1e;
+  --nav-dropdown-background-color: #252525;
+  --nav-dropdown-color: #e0e0e0;
+  --nav-dropdown-hover-color: #4a9cff;
+}
+
+/* Dark Mode Specific Styles */
+[data-theme="dark"] .hero img {
+  opacity: 0.8;
+}
+
+[data-theme="dark"] .light-background {
+  --background-color: #1a1a1a;
+  --surface-color: #252525;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9998;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+[data-theme="dark"] .theme-toggle {
+  background: #4a9cff;
+}
+
+[data-theme="dark"] .theme-toggle i {
+  transform: rotate(180deg);
+}
+
+/* Smooth transitions */
+body, header, section, footer, .service-item, .resume-item, .skills .progress-bar-wrap {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark mode adjustments for specific elements */
+[data-theme="dark"] .service-item {
+  background-color: var(--surface-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .progress-bar-wrap {
+  background-color: #333;
+}
+
+[data-theme="dark"] .resume-item {
+  border-left-color: #4a9cff;
+}
+
+[data-theme="dark"] .section-title h2:before {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .php-email-form input,
+[data-theme="dark"] .php-email-form textarea {
+  background-color: #252525;
+  border-color: #333;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .php-email-form input::placeholder,
+[data-theme="dark"] .php-email-form textarea::placeholder {
+  color: #888;
 }

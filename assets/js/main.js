@@ -227,3 +227,47 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const themeToggle = document.getElementById('theme-toggle');
+  const icon = themeToggle.querySelector('i');
+  
+  // Check for saved theme preference or use system preference
+  const currentTheme = localStorage.getItem('theme') || 
+                      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  
+  // Apply the current theme
+  document.body.setAttribute('data-theme', currentTheme);
+  updateIcon(currentTheme);
+
+  // Toggle theme on button click
+  themeToggle.addEventListener('click', function() {
+    const currentTheme = document.body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    document.body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateIcon(newTheme);
+  });
+
+  // Update the icon based on theme
+  function updateIcon(theme) {
+    if (theme === 'dark') {
+      icon.classList.remove('bi-moon-fill');
+      icon.classList.add('bi-sun-fill');
+    } else {
+      icon.classList.remove('bi-sun-fill');
+      icon.classList.add('bi-moon-fill');
+    }
+  }
+
+  // Watch for system theme changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) {
+      const newTheme = e.matches ? 'dark' : 'light';
+      document.body.setAttribute('data-theme', newTheme);
+      updateIcon(newTheme);
+    }
+  });
+});
